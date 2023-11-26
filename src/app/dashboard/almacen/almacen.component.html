@@ -1,0 +1,15 @@
+<!-- Agrega esto en tu form-calculo-imc.component.html -->
+<div>
+    <label for="precioUnitario">Precio Unitario:</label>
+    <input type="number" id="precioUnitario" [(ngModel)]="precioUnitario">
+  
+    <label for="cantidadArticulos">Cantidad de Artículos:</label>
+    <input type="number" id="cantidadArticulos" [(ngModel)]="cantidadArticulos">
+  
+    <button (click)="calcularPrecio()">Calcular Precio</button>
+  </div>
+  
+  <div *ngIf="mostrarPrecio">
+    <p>El cliente debe pagar: {{ precioFinal | currency:'USD':'symbol':'1.2-2' }}</p>
+  </div>
+  
